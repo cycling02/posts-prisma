@@ -1,7 +1,7 @@
 import { prisma } from "@/prisma/client";
 import React from "react";
 
-const NewPost = async ({ params }: any) => {
+const NewPost = async ({ params }: { params: { slug: string } }) => {
   const post = await prisma.post.findUnique({
     where: {
       slug: params.slug,
